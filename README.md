@@ -36,7 +36,18 @@ This tech demo demonstrates the power of combining prompt engineering, multi-man
 
 ## Document Design
 
+The pitch set consists of 10 high-quality pitches, carefully designed to isolate alignment with specific mandates rather than overall quality. 
+
+No pitch is "bad" (except maybe Control_F), but each is designed to adhere to a specific genre/sub-genre. Each is well-defined but many are experimental, odd genre mashups, or niche. This creates one perfect fit per studio (A-Tier), curve balls that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** that no studio should be interested in for any reason. 
+
+Each pitch is evaluated across 3 distinct studio mandates with highly divergent priorities and tolerances.
+
+<details>
+<summary>
+  
 ### Studio Mandate Summaries
+
+</summary>
 
 The pitch set consists of 10 high-quality pitches, carefully designed to isolate alignment with specific mandates rather than overall quality. Each pitch is evaluated across 3 distinct studio mandates with highly divergent priorities and tolerances.
 
@@ -45,6 +56,8 @@ The pitch set consists of 10 high-quality pitches, carefully designed to isolate
 | Studio Dark     | Horror      | Mid             | Mid | No comedy-horror; rich world-building & mythology; horror-aligned themes & symbolism; no slasher, gorefest, monster of the week |
 | Studio Fun      | Comedy       | Low             | Fast | Formulaic episode structure; merchandising opportunities; minimal sets; character-driven humor; repeatable gags; younger audience |
 | Studio Prestige | Drama        | High            | Slow | Open to cross-genre; experimental over formulaic; character depth; cinematic quality; A-list talent required; older audience |
+
+</details>
 
 ---
 
@@ -64,6 +77,8 @@ Pitches are evaluated for **studio alignment**, not overall quality. No pitch is
 | Horror_A   | Supernatural Psychological     | Bastion on the Endless Sea | The crew of a fishing vessel, lost at sea, find themselves adrift in a liminal space where they encounter ghosts of the past and maritime myths. **The Terror** meets **Lost** with descent into maritime madness. |
 | Horror_B   | Western Rock Opera        | Cleave Land: A Post-Apocalyptic Rock Opera | Daisy and her companions brave raiders, monsters, and the post-apocalyptic Dust Bowl to reach the fabled Great Lakes and civilization. **Bone Tomahawk** meets **Fallout** with power ballads from corrupt Ferrymen. |
 | Horror_C   | Dark Fantasy Adventure | Carter vs. the Black Plague  | Carter and his band of righteous outlaws defy the odds, and the law, to distribute a cure across a medieval world plagued by monsters and corruption. **Robin Hood** meets **Ash vs. Evil Dead** with a road-trip vibe. |
+
+</details>
 
 ---
 
