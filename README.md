@@ -45,7 +45,7 @@ Each pitch is evaluated across 3 distinct studio mandates with highly divergent 
 <details>
 <summary>
   
-### Studio Mandate Summaries
+### Studio Mandate Summaries (Click to Expand)
 
 </summary>
 
@@ -61,7 +61,12 @@ The pitch set consists of 10 high-quality pitches, carefully designed to isolate
 
 ---
 
-### Pitch Summaries:
+<details>
+<summary>
+
+### Pitch Summaries (Click to Expand)
+
+</summary>
 
 Pitches are evaluated for **studio alignment**, not overall quality. No pitch is "bad" (except maybe Control_F), but each is designed to adhere to a specific genre/sub-genre. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates one perfect fit per studio (A-Tier), curve balls that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** that no studio should be interested in for any reason. 
 
@@ -89,7 +94,11 @@ Processing this batch (1 model x 3 mandate x 10 pitches) takes ~7 minutes on mod
 ---
 
 <details>
-<summary>Visuals - Batch Builder, HITL Weights, and Leaderboard Results</summary>
+<summary>
+  
+### Visuals - Batch Builder, HITL Weights, and Leaderboard Results (Click to Expand)
+
+</summary>
   
 ### Batch Builder
 
@@ -114,7 +123,11 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 ---
 
 <details>
-<summary>Visuals - Studio Dark - Horror A, B, C</summary>
+<summary>
+
+### Visuals - Studio Dark - Horror A, B, C (Click to Expand)
+
+</summary>
 
 ### Qwen3:8b - Horror A - Supernatural Psychological - Bastion on the Endless Sea
 
@@ -133,7 +146,11 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 ---
 
 <details>
-<summary>Visuals - Studio Fun - Comedy A, B, C</summary>
+<summary>
+  
+### Visuals - Studio Fun - Comedy A, B, C (Click to Expand)
+
+</summary>
 
 ### Qwen3:8b - Comedy A - Ensemble Sitcom - Gigged Out
 
@@ -152,7 +169,11 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 ---
 
 <details>
-<summary>Visuals - Studio Prestige - Drama A, B, C</summary>
+<summary>
+  
+### Visuals - Studio Prestige - Drama A, B, C (Click to Expand)
+
+</summary>
 
 ### Qwen3:8b - Drama A - Political Thriller - Wolf Mountain Divide
 
