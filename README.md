@@ -185,7 +185,7 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 <details>
 <summary>
   
-### Visuals - Studio Prestige - Drama A, B, C (Click to Expand)
+**Visuals - Studio Prestige - Drama A, B, C (Click to Expand)**
 
 </summary>
 
