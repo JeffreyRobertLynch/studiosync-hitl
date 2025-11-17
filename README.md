@@ -45,7 +45,7 @@ Each pitch is evaluated across 3 distinct studio mandates with highly divergent 
 <details>
 <summary>
   
-### Studio Mandate Summaries (Click to Expand)
+**Studio Mandate Summaries (Click to Expand)**
 
 </summary>
 
@@ -64,7 +64,7 @@ The pitch set consists of 10 high-quality pitches, carefully designed to isolate
 <details>
 <summary>
 
-### Pitch Summaries (Click to Expand)
+**Pitch Summaries (Click to Expand)**
 
 </summary>
 
@@ -96,7 +96,7 @@ Processing this batch (1 model x 3 mandate x 10 pitches) takes ~7 minutes on mod
 <details>
 <summary>
   
-### Visuals - Batch Builder, HITL Weights, and Leaderboard Results (Click to Expand)
+**Visuals - Batch Builder, HITL Weights, and Leaderboard Results (Click to Expand)**
 
 </summary>
   
@@ -104,9 +104,13 @@ Processing this batch (1 model x 3 mandate x 10 pitches) takes ~7 minutes on mod
 
 ![Batch Builder](output/batch_run_qwen38b_3x10.png)
 
+---
+
 ### HITL Weights
 
 ![HITL Weights](output/hitl_weights.png)
+
+---
 
 ### Leaderboard Results
 
@@ -125,17 +129,23 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 <details>
 <summary>
 
-### Visuals - Studio Dark - Horror A, B, C (Click to Expand)
+**Visuals - Studio Dark - Horror A, B, C (Click to Expand)**
 
 </summary>
+
+---
 
 ### Qwen3:8b - Horror A - Supernatural Psychological - Bastion on the Endless Sea
 
 ![Bastion on the Endless Sea](output/qwen38b_dark_horror_A.png)
 
+---
+
 ### Qwen3:8b - Horror B - Western Rock Opera - Cleave Land: A Post-Apocalyptic Rock Opera
 
 ![Cleave Land: A Post-Apocalyptic Rock Opera](output/qwen38b_dark_horror_B.png)
+
+---
 
 ### Qwen3:8b - Horror C - Dark Fantasy Adventure - Carter vs. the Black Plague
 
@@ -148,7 +158,7 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 <details>
 <summary>
   
-### Visuals - Studio Fun - Comedy A, B, C (Click to Expand)
+**Visuals - Studio Fun - Comedy A, B, C (Click to Expand)**
 
 </summary>
 
@@ -156,9 +166,13 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 
 ![Gigged Out](output/qwen38b_fun_comedy_A.png)
 
+---
+
 ### Qwen3:8b - Comedy B - Cynical Mockumentary - Benchford University
 
 ![Benchford University](output/qwen38b_fun_comedy_B.png)
+
+---
 
 ### Qwen3:8b - Comedy C - Absurdist Animation - The Breakfast Brigade
 
@@ -179,9 +193,13 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 
 ![Wolf Mountain Divide](output/qwen38b_prestige_drama_A.png)
 
+---
+
 ### Qwen3:8b - Drama B - Social Realism Dance - Westville Backup
 
 ![Westville Backup](output/qwen38b_prestige_drama_B.png)
+
+---
 
 ### Qwen3:8b - Drama C - Period Crime Romance - Bluefield Cycle
 
