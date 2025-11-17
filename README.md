@@ -72,7 +72,7 @@ Pitches are evaluated for **studio alignment**, not overall quality. No pitch is
 
 | Pitch Name | Sub-Genre           | Title          | Summary/Logline |
 | ---------- | --------------- | ------------- | --------------- |
-| Comedy_A   | Ensemble Sitcom | Gigged Out    | Six unskilled gig-workers, all strangers, pool their resources (and dubious "expertise") to lease a shared office space but are immediately mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
+| Comedy_A   | Ensemble Sitcom | Gigged Out    | Six gig-workers with dubious skills, all strangers, pool their resources to lease a shared office space but are immediately mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
 | Comedy_B   | Cynical Mockumentary | Benchford University  | Six professors at a low prestige university enact schemes to improve their lives while scheming to prevent each other from improving their lives. **Parks & Recreation** meets **A.P. Bio** with a card battling system. |
 | Comedy_C   | Absurdist Animation   | The Breakfast Brigade  | The "Breakfast Brigade", an international paramilitary team of anthropomorphic breakfast foods, fight to protect breakfast from the villainous group, "The Process". **G.I. Joe** meets **Archer** with more food puns. |
 | Control_F  | Sport Academia        | Grains of Truth: Competitive Sand Counting | A sincere attempt to capture the niche academic sport of competitive sand counting as never seen before on TV. **C-Span** meets **Dry Instructional Films** with more tedium. | 
