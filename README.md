@@ -38,7 +38,7 @@ This tech demo demonstrates the power of combining prompt engineering, multi-man
 
 ### Studio Mandate Summaries
 
-The pitch set consists of 10 high-quality pitches, carefully designed to isolate alignment with specific mandates rather than overall quality. Each pitch is evaluated across 3 distinct studio mandates with highly divergent priorities and tolerances:
+The pitch set consists of 10 high-quality pitches, carefully designed to isolate alignment with specific mandates rather than overall quality. Each pitch is evaluated across 3 distinct studio mandates with highly divergent priorities and tolerances.
 
 | Studio     | Base Genre      | Budget Category | Production Timeline | Additional Priorities |
 | ---------- | --------------- | --------------- | --------------- | ------------ |
@@ -50,26 +50,26 @@ The pitch set consists of 10 high-quality pitches, carefully designed to isolate
 
 ### Pitch Summaries:
 
-No pitch is "bad" (except maybe Control_F), but each is designed with a specific genre/sub-genre in mind. Each is well-defined and many are odd genre mashups or niches. This creates one perfect fit per studio, a lot of curve balls that intentionally violate key studio priorities, and one **universal control pitch** that no studio should be interested in for any reason. 
+Pitches are evaluated for **studio alignment**, not overall quality. No pitch is "bad" (except maybe Control_F), but each is designed to adhere to a specific genre/sub-genre. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates one perfect fit per studio (A-Tier), curve balls that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** that no studio should be interested in for any reason. 
 
 | Pitch Name | Sub-Genre           | Title          | Summary/Logline |
 | ---------- | --------------- | ------------- | --------------- |
-| Comedy_A   | Ensemble Sitcom | Gigged Out    | Six unskilled gig-workers, all strangers, pool their resources to lease a share office space but are immediately mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
+| Comedy_A   | Ensemble Sitcom | Gigged Out    | Six unskilled gig-workers, all strangers, pool their resources (and dubious "expertise") to lease a shared office space but are immediately mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
 | Comedy_B   | Cynical Mockumentary | Benchford University  | Six professors at a low prestige university enact schemes to improve their lives while scheming to prevent each other from improving their lives. **Parks & Recreation** meets **A.P. Bio** with a card battling system. |
-| Comedy_C   | Absurdist Animation   | The Breakfast Brigade  | The Breakfast Brigade, an international paramilitary team of anthropormphic breakfast foods, fight to protect breakfast from villainy. **G.I. Joe** meets **Archer** with more food puns. |
-| Control_F  | Sport Academia        | Grains of Truth: Competitive Sand Counting | A sincere attempt to capture the niche academic sport of competitive sand counting as never seen before on TV. **C-Span** meets **Dry Instructional Films** with more tedium. |             |
-| Drama_A    | Political Thriller    | Wold Mountain Divide | A retired city lawyer, now mayor of a remote Appalachian town, reawakens her ambition when a corporation sets their sights on her domain. **Succession** meets **Yellowstone** with more Kathy Bates. |
-| Drama_B    | Social Realism Dance           | Westville Backup | Three third-tier backup dancers support each other while living their mundane lives, occasionally glimpsing glamour and spotlight. **Fame** meets **Euphoria** with more duality. |
+| Comedy_C   | Absurdist Animation   | The Breakfast Brigade  | The "Breakfast Brigade", an international paramilitary team of anthropomorphic breakfast foods, fight to protect breakfast from the villainous group, "The Process". **G.I. Joe** meets **Archer** with more food puns. |
+| Control_F  | Sport Academia        | Grains of Truth: Competitive Sand Counting | A sincere attempt to capture the niche academic sport of competitive sand counting as never seen before on TV. **C-Span** meets **Dry Instructional Films** with more tedium. | 
+| Drama_A    | Political Thriller    | Wolf Mountain Divide | A retired city lawyer, now mayor of a remote Appalachian town, reawakens her ambition when a corporation sets their sights on her domain. **Succession** meets **Yellowstone** with more Kathy Bates. |
+| Drama_B    | Social Realism Dance           | Westville Backup | Three third-tier backup dancers support each other while working mundane day jobs, striving for the chance to catch an occasional glimpse of the spotlight. **Fame** meets **Euphoria** with more duality. |
 | Drama_C    | Period Crime Romance          | Bluefield Cycle    | In the 90s, a failed competitive cyclist and her mechanic boyfriend embark on a thrilling crime spree, with a predictably tragic resolution. **The Basketball Diaries** meets **Halt and Catch Fire** with cycling crimes. |
-| Horror_A   | Supernatural Psychological     | Bastion on the Endless Sea | The crew of a fishing vessel, lost at sea, find themselves adrift in a liminal space where they encounter ghosts of the past and maritime myths. **The Terror** meets **Lost** with descent into madness. |
-| Horror_B   | Western Rock Opera        | Cleave Land: A Post-Apocalyptic Rock Opera | Daisy and her companions brave raiders, monsters, and the post-apocalyptic Dust Bowl to reach the fabled Great Lakes and civilization. **Bone Tomahawk** meets **Fallout** with Ferryman power ballads. |
+| Horror_A   | Supernatural Psychological     | Bastion on the Endless Sea | The crew of a fishing vessel, lost at sea, find themselves adrift in a liminal space where they encounter ghosts of the past and maritime myths. **The Terror** meets **Lost** with descent into maritime madness. |
+| Horror_B   | Western Rock Opera        | Cleave Land: A Post-Apocalyptic Rock Opera | Daisy and her companions brave raiders, monsters, and the post-apocalyptic Dust Bowl to reach the fabled Great Lakes and civilization. **Bone Tomahawk** meets **Fallout** with power ballads from corrupt Ferrymen. |
 | Horror_C   | Dark Fantasy Adventure | Carter vs. the Black Plague  | Carter and his band of righteous outlaws defy the odds, and the law, to distribute a cure across a medieval world plagued by monsters and corruption. **Robin Hood** meets **Ash vs. Evil Dead** with a road-trip vibe. |
 
 ---
 
 ## Full Leaderboard - Qwen3:8b - 3 Mandates - 10 Pitches
 
-Processing this batch (1 model x 3 mandate x 10 pitches) takes ~7 minutes on modest hardware. It produces 3 CSV files, one for each 1 model x 1 mandate x 10 pitch grouping, for comparative display. It also generates 30 separate JSON files (1 model x 1 mandate x 1 pitch) of raw model scores and text justifications pre-HITL weighting for display and full transparency. Examples of parsed JSON model output are provided below. 
+Processing this batch (1 model x 3 mandate x 10 pitches) takes ~7 minutes on modest hardware. It produces 3 CSV files, one for each 1 model x 1 mandate x 10 pitch grouping, for comparative display. It also generates 30 separate JSON files (1 model x 1 mandate x 1 pitch) of raw model scores and text justifications, pre-HITL weighting, for display and full transparency. Examples of parsed JSON model output are provided below. 
 
 ---
 
@@ -78,95 +78,80 @@ Processing this batch (1 model x 3 mandate x 10 pitches) takes ~7 minutes on mod
   
 ### Batch Builder
 
+![Batch Builder](output/batch_run_qwen38b_3x10.png)
+
 ### HITL Weights
+
+![HITL Weights](output/hitl_weights.png)
 
 ### Leaderboard Results
 
+![Leaderboard Results](output/leaderboard_qwen38b_3x10.png)
+
 </details>
 
 ---
 
-## Model Output without HITL Weights Applied
+## Parsed JSON Model Output without HITL Weights Applied
 
 Raw model output is parsed into JSON and saved before applying HITL weights. These files can be retrieved for easy human-readable display within the dashboard. The default token limit for a model's raw scoring and text justifications is 512 tokens, but this can be adjusted. A smaller token limit can speed up batch processing considerably if the user does not need the section-by-section text justifications. A larger token limit can offer more context for the model's decisions, and allow the model to fully expound on how the pitch aligns or misaligns with the studio mandate.
 
+---
+
 <details>
-<summary>### Qwen3:8b - Studio Dark</summary>
+<summary>Visuals - Studio Dark - Horror A, B, C</summary>
 
-#### Horror A - Supernatural Psychological - Bastion on the Endless Sea
+### Qwen3:8b - Horror A - Supernatural Psychological - Bastion on the Endless Sea
 
-#### Horror B - Western Rock Opera - Cleave Land: A Post-Apocalyptic Rock Opera
+![Bastion on the Endless Sea](output/qwen38b_dark_horror_A.png)
 
-#### Horror C - Dark Fantasy Adventure - Carter vs. the Black Plague
+### Qwen3:8b - Horror B - Western Rock Opera - Cleave Land: A Post-Apocalyptic Rock Opera
+
+![Cleave Land: A Post-Apocalyptic Rock Opera](output/qwen38b_dark_horror_B.png)
+
+### Qwen3:8b - Horror C - Dark Fantasy Adventure - Carter vs. the Black Plague
+
+![Carter vs. the Black Plague](output/qwen38b_dark_horror_C.png)
 
 </details>
 
 ---
 
 <details>
-<summary>### Qwen3:8b - Studio Dark</summary>
+<summary>Visuals - Studio Fun - Comedy A, B, C</summary>
 
-#### Horror A - Supernatural Psychological - Bastion on the Endless Sea
+### Qwen3:8b - Comedy A - Ensemble Sitcom - Gigged Out
 
-#### Horror B - Western Rock Opera - Cleave Land: A Post-Apocalyptic Rock Opera
+![Gigged Out](output/qwen38b_fun_comedy_A.png)
 
-#### Horror C - Dark Fantasy Adventure - Carter vs. the Black Plague
+### Qwen3:8b - Comedy B - Cynical Mockumentary - Benchford University
 
-</details>
+![Benchford University](output/qwen38b_fun_comedy_B.png)
 
----
+### Qwen3:8b - Comedy C - Absurdist Animation - The Breakfast Brigade
 
-<details>
-<summary>### Qwen3:8b - Studio Dark</summary>
-
-#### Horror A - Supernatural Psychological - Bastion on the Endless Sea
-
-#### Horror B - Western Rock Opera - Cleave Land: A Post-Apocalyptic Rock Opera
-
-#### Horror C - Dark Fantasy Adventure - Carter vs. the Black Plague
+![The Breakfast Brigade](output/qwen38b_fun_comedy_C.png)
 
 </details>
 
 ---
 
 <details>
-<summary>Good Pitch - Cleave Land: A Horror Rock Opera (Experimental Horror Pitch) vs. Studio Dark (Horror Studio Mandate)</summary>
+<summary>Visuals - Studio Prestige - Drama A, B, C</summary>
 
-This pitch was designed for excellent alignment with the business needs of Studio Dark. It fits most elements of the rubric perfectly. Its major deviations are that it is an experimental horror rock opera, relies heavily on gore as opposed to atmospheric horror tones, and requires a music licensing budget beyond what Studio Dark is typically comfortable with.
+### Qwen3:8b - Drama A - Political Thriller - Wolf Mountain Divide
 
-</details>
+![Wolf Mountain Divide](output/qwen38b_prestige_drama_A.png)
 
-<details>
-<summary>Decent Pitch - Carter Versus The Black Plague (Horror Adventure Comedy Pitch) vs. Studio Dark (Horror Studio Mandate)</summary>
+### Qwen3:8b - Drama B - Social Realism Dance - Westville Backup
 
-This pitch was designed for decent alignment with the business needs of Studio Dark. It fits many elements of the scoring rubric. However, it is a synthesis of Mad Max, Robin Hood, and Ash vs. Evil Dead. It leans more towards light-hearted adventure, with comedy beats, and only a facade of horror elements. Additionally, it is set in the medieval era and requires extensive on location filming. Thus, the costume and location budget is much too high for Studio Dark, a mid-budget horror studio. 
+![Westville Backup](output/qwen38b_prestige_drama_B.png)
 
-</details>
+### Qwen3:8b - Drama C - Period Crime Romance - Bluefield Cycle
 
-<details>
-<summary>Misaligned Drama Pitch - Wolf Mountain Divide (Prestige Drama Thriller Pitch) vs. Studio Dark (Horror Studio Mandate)</summary>
-
-This is a well-constructed, solid pitch for Studio Prestige, a high-budget prestige drama studio. It is mostly inappropriate for Studio Dark, but some elements of the rubric align due to the morally ambiguous characters, slowly building dread, and thriller elements. However, the series requires recognizable, high-caliber talent, so the budget is much too high for Studio Dark.
+![Bluefield Cycle](output/qwen38b_prestige_drama_C.png)
 
 </details>
-
-<details>
-<summary>Misaligned Comedy Pitch - Benchford University (Satirical Workplace Mockumentary Pitch) vs. Studio Dark (Horror Studio Mandate)</summary>
-
-This is a well-constructed, solid pitch for Studio Fun, a low-budget comedy studio. However, it is completely inappropriate for Studio Dark. 
-
-</details>
-
-<details>
-<summary>Boring Control Pitch - Grains of Truth: Competitive Sand Counting (Pitch) vs. Studio Dark (Horror Studio Mandate)</summary>
-
-This is a control pitch, purposefully designed to align with the needs of no studio. A dry documentary on competitive sand counting with no creative angle, human interest depth, or clever subversion. It should appeal to practically no audience or studio. 
-
-</details>
-
----
-
-## Structured Evaluation Output: Qwen3: 8B (Local Model)
 
 ---
 
@@ -180,8 +165,7 @@ This is a control pitch, purposefully designed to align with the needs of no stu
 | Local Inference     | **Ollama**                  					 |
 | Local Models        | **Qwen3:8b**                  					 |
 | Cloud APIs          | **GPT-4o, Gemini 1.5 Pro, Claude 3.5 Sonnet** |
-| Data                | Markdown, CSV, JSON                             |
-| Visualization       | Streamlit tables				                        |
+| Data                | **Markdown**, **CSV**, **JSON**                             |
 
 ---
 
