@@ -12,7 +12,7 @@ This demo showcases the system running a batch of 10 pitches across 3 distinct m
 
 **Conclusion:** Even a smaller local model like **Qwen3:8b** can achieve **exceptional performance** on highly complex tasks **(combining objective quantitative metrics, subjective qualitative metrics, dense rubric evaluation)** with appropriate **prompt engineering, document formatting, error handling, RAG, parsing, and system engineering**.  
 
---
+---
 
 ## Generalizability
 
