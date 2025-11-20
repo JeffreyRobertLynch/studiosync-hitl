@@ -30,7 +30,7 @@ Highly Generalizable to other sectors where priority alignment or resource alloc
 
 ## System Overview
 
-- **Multi-model inference:** Run evaluations using local (Qwen3) and cloud-based LLMs (GPT-4, Gemini, Claude).
+- **Multi-model inference:** Run evaluations using **10+ local (Qwen3, GPT-OSS, Gemma, DeepSeek)** and **cloud-based LLMs (GPT-4+, Gemini, Claude)**.
 - **Structured rubric scoring:** Each pitch is evaluated on 8 distinct categories, scored from 1–10 with a text justification, raw model output is JSON/CSV parsed, and a final score is achieved after apply human-adjustable section weights.
 - **Mandate–pitch alignment:** Evaluate pitch alignment using varied studio mandates (low-budget comedy, mid-budget horror, high-budget drama) with granular requirements in tone, target audience, runtime, casting, production timeline, themes, content sensitivity, and more.
 - **Weighted score aggregation:** Allow flexible weight adjustments to prioritize certain categories over others with easy adjustment sliders.
@@ -93,16 +93,16 @@ Pitches are evaluated for **studio alignment**, not overall quality. No pitch is
 
 | Pitch Name | Sub-Genre           | Title          | Summary/Logline |
 | ---------- | --------------- | ------------- | --------------- |
-| Comedy_A   | Ensemble Sitcom | Gigged Out    | Six gig-workers with dubious skills, all strangers, pool their resources to lease a shared office space but are immediately mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
+| Comedy_A   | Ensemble Sitcom | Gigged Out    | Six gig-workers with dubious skills, all strangers, pool their resources to lease a shared office space but are mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
 | Comedy_B   | Cynical Mockumentary | Benchford University  | Six professors at a low prestige university enact schemes to improve their lives while scheming to prevent each other from improving their lives. **Parks & Recreation** meets **A.P. Bio** with a card battling system. |
 | Comedy_C   | Absurdist Animation   | The Breakfast Brigade  | The "Breakfast Brigade", an international paramilitary team of anthropomorphic breakfast foods, fight to protect breakfast from the villainous group, "The Process". **G.I. Joe** meets **Archer** with more food puns. |
-| Control_F  | Sport Academia        | Grains of Truth: Competitive Sand Counting | A sincere attempt to capture the niche academic sport of competitive sand counting as never seen before on TV. **C-Span** meets **Dry Instructional Films** with coarse, rough, irritating sand. | 
-| Drama_A    | Political Thriller    | Wolf Mountain Divide | A retired city lawyer, now mayor of a remote Appalachian town, reawakens her ambition when a corporation sets their sights on her domain. **Succession** meets **Yellowstone** with Kathy Bates, Toby Maguire, and Jeff Bridges. |
+| Control_F  | Sport Academia        | Grains of Truth: Competitive Sand Counting | A sincere attempt to capture the niche academic sport of competitive sand counting as never seen before on TV. **C-Span** meets **Dry Instructional Films** with coarse, rough, irritating sand that gets everywhere. | 
+| Drama_A    | Political Thriller    | Wolf Mountain Divide | A retired city lawyer, now mayor of a remote Appalachian town, reawakens her ambition when a corporation sets their sights on her domain. **Succession** meets **Yellowstone** with Kathy Bates and Toby Maguire. |
 | Drama_B    | Social Realism Dance           | Westville Backup | Three third-tier backup dancers support each other while working mundane day jobs, striving for the chance to catch an occasional glimpse of the spotlight. **Fame** meets **Euphoria** with more duality. |
 | Drama_C    | Period Crime Romance          | Bluefield Cycle    | In the 90s, a failed competitive cyclist and her mechanic boyfriend embark on a thrilling crime spree, with a predictably tragic resolution. **The Basketball Diaries** meets **Halt and Catch Fire** with cycling crimes. |
 | Horror_A   | Supernatural Psychological     | Bastion on the Endless Sea | The crew of a fishing vessel, lost at sea, find themselves adrift in a liminal space where they encounter ghosts of the past and maritime myths. **The Terror** meets **Lost** with descent into maritime madness. |
 | Horror_B   | Western Rock Opera        | Cleave Land: A Post-Apocalyptic Rock Opera | Daisy and her companions brave raiders, monsters, and the post-apocalyptic Dust Bowl to reach the fabled Great Lakes and civilization. **Bone Tomahawk** meets **Fallout** with Ferrymen slinging power ballads. |
-| Horror_C   | Dark Fantasy Adventure | Carter vs. the Black Plague  | Carter and his band of righteous outlaws defy the odds, and the law, to distribute a cure across a medieval world plagued by monsters and corruption. **Robin Hood** meets **Ash vs. Evil Dead** with a medieval road-trip vibe. |
+| Horror_C   | Dark Fantasy Adventure | Carter vs. the Black Plague  | Carter and his band of righteous outlaws defy the odds, and the law, to distribute a cure across a medieval world plagued by monsters and corruption. **Robin Hood** meets **Ash vs. Evil Dead** with a road-trip vibe. |
 
 </details>
 
@@ -244,8 +244,8 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 | Core Logic          | **Python 3.11**                                                    |
 | Model Orchestration | **Custom LLM_Interface Class**                                             |
 | Local Inference     | **Ollama, Transformers, OpenAI, Anthropic**                 					 |
-| Local Models        | **Qwen3:8b**                  					 |
-| Cloud APIs          | **GPT-4o, Gemini 1.5 Pro, Claude 3.5 Sonnet** |
+| Local Models        | **Qwen3, Gemma, DeepSeek, GPT-OSS**                  					 |
+| Cloud APIs          | **GPT-4+, Gemini 1.5, Claude 3.5** |
 | Data                | **Markdown**, **CSV**, **JSON**                             |
 | Hardware            | **RTX 4080 GPU, 7900X 12-Core CPU, 32 GB RAM**                             |
 
