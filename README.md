@@ -68,11 +68,11 @@ Qwen3:8 was expected to be the system's **bottom tier performance baseline** com
 
 ## Document Design
 
-The pitch set consists of 10 high-quality pitches, carefully designed to isolate alignment with specific mandates rather than overall quality. 
+The pitch set consists of **10 high-quality pitches**, carefully designed to isolate alignment with specific mandates rather than overall quality. 
 
-No pitch is "bad" (except maybe Control_F), but each is designed to adhere to a specific genre/sub-genre. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates **one perfect fit per studio** (A-Tier), **two curve balls per studio** that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** that no studio should be interested in for any reason. 
+No pitch is "bad", but each is designed to adhere to a **specific genre/sub-genre**. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates **one perfect fit per studio** (A-Tier), **two curve balls per studio** that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** (Control_F) that **strongly misaligns with all studio business needs**. 
 
-Each pitch is evaluated across 3 distinct studio mandates with highly divergent priorities and tolerances.
+Each pitch is evaluated across **3 distinct studio mandates** with **highly divergent priorities** and **deviation tolerances**.
 
 <details>
 <summary>
@@ -80,8 +80,6 @@ Each pitch is evaluated across 3 distinct studio mandates with highly divergent 
 **Studio Mandate Summaries (Click to Expand)**
 
 </summary>
-
-The pitch set consists of 10 high-quality pitches, carefully designed to isolate alignment with specific mandates rather than overall quality. Each pitch is evaluated across 3 distinct studio mandates with highly divergent priorities and tolerances.
 
 | Studio     | Base Genre      | Budget Category | Production Timeline | Episode Length | Season Length | Additional Priorities |
 | ---------- | --------------- | --------------- | --------------- | ------------ | ------------ | ------------ |
@@ -100,12 +98,10 @@ The pitch set consists of 10 high-quality pitches, carefully designed to isolate
 
 </summary>
 
-Pitches are evaluated for **studio alignment**, not overall quality. No pitch is "bad" (except maybe Control_F), but each is designed to adhere to a specific genre/sub-genre. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates one perfect fit per studio (A-Tier), curve balls that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** that no studio should be interested in for any reason. 
-
 | Pitch Name | Sub-Genre           | Title          | Summary/Logline |
 | ---------- | --------------- | ------------- | --------------- |
 | Comedy_A   | Ensemble Sitcom | Gigged Out    | Six gig-workers with dubious skills, all strangers, pool their resources to lease a shared office space but are mistaken for a legit consulting firm. **The Office** meets **Three's Company** with more incompetence. |
-| Comedy_B   | Cynical Mockumentary | Benchford University  | Six professors at a low prestige university enact schemes to improve their lives while scheming to prevent each other from improving their lives. **Parks & Recreation** meets **A.P. Bio** with a card battling system. |
+| Comedy_B   | Cynical Mockumentary | Benchford University  | Six professors at a low prestige university enact schemes to advance their careers while scheming to prevent rivals from advancing their own careers. **Parks & Recreation** meets **A.P. Bio** with a card battling system. |
 | Comedy_C   | Absurdist Animation   | The Breakfast Brigade  | The "Breakfast Brigade", an international paramilitary team of anthropomorphic breakfast foods, fight to protect breakfast from the villainous group, "The Process". **G.I. Joe** meets **Archer** with more food puns. |
 | Control_F  | Sport Academia        | Grains of Truth: Competitive Sand Counting | A sincere attempt to capture the niche academic sport of competitive sand counting as never seen before on TV. **C-Span** meets **Dry Instructional Films** with coarse, rough, irritating sand that gets everywhere. | 
 | Drama_A    | Political Thriller    | Wolf Mountain Divide | A retired city lawyer, now mayor of a remote Appalachian town, reawakens her ambition when a corporation sets their sights on her domain. **Succession** meets **Yellowstone** with Kathy Bates and Toby Maguire. |
