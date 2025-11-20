@@ -8,8 +8,6 @@ A **multi-tier LLM system** for evaluating and scoring TV Series pitches vs. mul
 
 ![Batch Builder](output/batch_builder.png)
 
----
-
 ![HITL Weights](output/hitl_weights.png)
 
 ---
@@ -18,9 +16,9 @@ A **multi-tier LLM system** for evaluating and scoring TV Series pitches vs. mul
 
 **StudioSync** is a model-agnostic, multi-rubric evaluation system designed to evaluate TV show pitches against specific studio mandates. The system provides granular scoring of genre, tone, target audience, and production requirements informed by reference documents. Appropriate for automating "first reads" or routing pitches to specific studios where business needs align. 
 
-This demo showcases the system running a batch of 10 pitches across 3 distinct mandates, highlighting the system's raw structured scoring output and the final leaderboard after apply human-adjustable section weighting. The system integrates powerful cloud-based models like GPT, Gemini, and Claude. It also includes local instances (Qwen) for contained, data secure systems and processes.
+This demo showcases the system evaluating a batch of 10 pitches across 3 distinct mandates with a local instance of Qwen3:8b. This run highlights the system's raw structured scoring output and the final leaderboard after applying human-adjustable section weights. Local inference, as displayed in this run, provides a contained, secure system for legal, data, and IP protection. This system can also provide inference using more powerful, but less secure, cloud-based models like GPT, Gemini, and Claude.
 
-**Conclusion:** Even a smaller local model like **Qwen3:8b** can achieve **exceptional performance** on highly complex tasks **(combining objective quantitative metrics, subjective qualitative metrics, dense rubric evaluation)** with appropriate **prompt engineering, document formatting, error handling, RAG, parsing, and system engineering**.  
+**Conclusion:** Even a smaller, secure, local model like **Qwen3:8b** can achieve **exceptional performance** on highly complex tasks **(combining objective quantitative metrics, subjective qualitative metrics, dense rubric evaluation)** with appropriate **prompt engineering, document formatting, error handling, RAG, parsing, and system engineering**.  
 
 ---
 
@@ -41,19 +39,21 @@ Highly Generalizable to other sectors where **priority alignment** or **resource
 
 ## System Overview
 
-- **Multi-model inference:** Run evaluations using **10+ local (Qwen3, GPT-OSS, Gemma, DeepSeek)** and **cloud-based LLMs (GPT-4+, Gemini, Claude)**.
+- **Multi-model inference:** Run evaluations using **10+ local (Qwen3, GPT-OSS, Gemma, DeepSeek) and cloud-based LLMs (GPT-4+, Gemini, Claude)**.
 - **Structured rubric scoring:** Each pitch is evaluated on 8 distinct categories, scored from 1–10 with a text justification, raw model output is JSON/CSV parsed, and a final score is achieved after apply human-adjustable section weights.
 - **Mandate–pitch alignment:** Evaluate pitch alignment using varied studio mandates (low-budget comedy, mid-budget horror, high-budget drama) with granular requirements in tone, target audience, runtime, casting, production timeline, themes, content sensitivity, and more.
 - **Weighted score aggregation:** Allow flexible weight adjustments to prioritize certain categories over others with easy adjustment sliders.
 - **Batch processing + leaderboard output:** Efficiently process multiple pitches in batches and rank them according to their alignment with multiple mandates for comparison.
-- **Streamlit HITL interface:** Enable building batches (select models, pitches, mandates), human-in-the-loop (HITL) weight adjustments, and display for transparent raw model output vs. final aggregate leaderboard scoring.
-- **Full Workflow**: Inputs (model + pitches + mandates + section weights) -> Batch Inference -> Model Output -> JSON Parsing -> Weight Application -> CSV Parsing -> Ranking -> Final Leaderboard.
+- **Streamlit HITL interface:** Enable building batches (select models, pitches, mandates), human-in-the-loop (HITL) section weight adjustments, and display for transparent raw model output vs. final aggregate leaderboard scoring.
+- **Full Workflow**: Inputs (model + pitches + mandates + section weights) -> Batch Inference -> Model Output -> JSON Parsing -> Weight Application -> CSV Parsing -> Ranking -> Final Leaderboard Display.
 
 ---
 
 ## Results
 
-Performance for Qwen3:8 **far exceeds expectations**. This exceptional performance, for a relatively small model, is likely due to **prompt engineering, error handling, document formatting, RAG, parsing, and system engineering**. Qwen3:8 was expected to be the system's **bottom tier performer** compared to cloud-based models 100 times its size, like GPT. To see more divergence in performance, a ~4b local model (Qwen, or Mistral or Llama) will need to be tested as a **bottom tier performer**.
+Performance for Qwen3:8 **far exceeds expectations**. This exceptional performance, for a relatively small model, is likely due to robust **prompt engineering, error handling, document formatting, RAG, parsing, and system engineering**. 
+
+Qwen3:8 was expected to be the system's **bottom tier performance baseline** compared to cloud-based models 100 times its size, like GPT. To see more divergence in performance, a ~4b local model (Qwen, Mistral, Gemma, Llama) will need to be tested as a new **bottom tier performance baseline**.
 
 - A, B, and C pitches are appropriately ranked relative to each studio's priorities. **Nothing is out of order.**
 - **Pitch: Control_F_Sport_Academia** is appropriately ranked very low for all three studios.
