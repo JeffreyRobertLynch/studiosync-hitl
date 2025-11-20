@@ -4,7 +4,7 @@ A **multi-tier LLM system** for evaluating and scoring TV Series pitches vs. mul
 
 ---
 
-## Streamlit Interface Batch Options - 10 Model x 10 Pitch x 3 Studio Mandate x 8 HITL-Adjustable Section Weights
+## Batch Options - 10 Model x 10 Pitch x 3 Studio Mandate x 8 Adjustable Section Weights
 
 ![Batch Builder](output/batch_builder.png)
 
