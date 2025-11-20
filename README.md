@@ -4,6 +4,16 @@ A **multi-tier LLM system** for evaluating and scoring TV Series pitches vs. mul
 
 ---
 
+## Streamlit Interface Batch Options - 10 Model x 10 Pitch x 3 Studio Mandate x 8 HITL-Adjustable Section Weights
+
+![Batch Builder](output/batch_builder.png)
+
+---
+
+![HITL Weights](output/hitl_weights.png)
+
+---
+
 ## Executive Summary
 
 **StudioSync** is a model-agnostic, multi-rubric evaluation system designed to evaluate TV show pitches against specific studio mandates. The system provides granular scoring of genre, tone, target audience, and production requirements informed by reference documents. Appropriate for automating "first reads" or routing pitches to specific studios where business needs align. 
@@ -16,7 +26,7 @@ This demo showcases the system running a batch of 10 pitches across 3 distinct m
 
 ## Generalizability
 
-Highly Generalizable to other sectors where priority alignment or resource allocation is key, including:
+Highly Generalizable to other sectors where **priority alignment** or **resource allocation** is key, including:
 
 - **Legal Documents**
 - **Healthcare Operations**
@@ -25,6 +35,7 @@ Highly Generalizable to other sectors where priority alignment or resource alloc
 - **Brand Communication Guidelines**
 - **Organization Policies**
 - **Manufacturing Processes**
+- **Team-building & Skills Coverage**
 
 ---
 
@@ -42,16 +53,16 @@ Highly Generalizable to other sectors where priority alignment or resource alloc
 
 ## Results
 
-Performance for Qwen3:8 **exceeds my expectations by far**. This exceptional performance, for a relatively small model, is likely due to **prompt engineering, error handling, document formatting, RAG, parsing, and system engineering**. Qwen3:8 was expected to be the system's **bottom tier performer** compared to cloud-based models 100 times its size, like GPT. To see more divergence in performance, a ~4b local model (Qwen, or Mistral or Llama) will need to be tested as a **bottom tier performer**.
+Performance for Qwen3:8 **far exceeds expectations**. This exceptional performance, for a relatively small model, is likely due to **prompt engineering, error handling, document formatting, RAG, parsing, and system engineering**. Qwen3:8 was expected to be the system's **bottom tier performer** compared to cloud-based models 100 times its size, like GPT. To see more divergence in performance, a ~4b local model (Qwen, or Mistral or Llama) will need to be tested as a **bottom tier performer**.
 
 - A, B, and C pitches are appropriately ranked relative to each studio's priorities. **Nothing is out of order.**
 - **Pitch: Control_F_Sport_Academia** is appropriately ranked very low for all three studios.
 - Text justifications provide excellent context and **reference relevant studio mandate sections specifically**.
-- **Objective quantitative metrics** (Budget, Production Timeline, Episode Count, Episode Length, Primary Cast Size, etc.) are **referenced and judged accurately**, with one notable exception out of 30 inferences. This could potentially be remedied by revisiting prompt engineering or doc structure.
+- **Objective quantitative metrics** (Budget, Production Timeline, Episode Count, Episode Length, Primary Cast Size, etc.) are **referenced and judged accurately**, with one minor exception out of 30 inferences. This could potentially be remedied by revisiting prompt engineering or doc structure.
 - **Subjective qualitative metrics** (Sub-Genre, Cross-Genre, Tone, Style Influences, Premise, Themes, etc.) are **referenced and judged accurately**, though not penalized harshly enough in some cases. This could potentially be remedied by revisiting prompt engineering or doc structure.
 - Even more interesting, the evaluation of misaligned genre pitches (Comedy Pitch vs Horror Studio Mandate, et al.) is **nuanced and accurate**. Studio Prestige (Drama) and Studio Dark (Horror) have no interest in formulaic comedy pitches, even if well-constructed. **Scoring here is highly appropriate**.
-- Likewise, Studio Prestige (Drama) and Studio Dark (Horror) have many **overlapping priorities** (darker tone, strong themes, symbolism, world-building, etc.). It is **perfectly appropriate** that **Pitch: Horror_B_Western_Rock_Opera (a highly original experimental premise with a unique artistic vision)** scores very high with both **Studio Dark** (for horror mythos, originality, world-building, strong themes, budget, etc.) and **Studio Prestige** (for originality, world-building, strong themes, experimental storytelling, unique artistic vision, etc.).
-- Further, **Pitch: Horror_C_DarkFantasy_Adventure (a wide genre mashup of horror, adventure, action, fantasy, and comedy)** is the highest scoring non-comedy pitch with **Studio Fun**. This is also **perfectly appropriate** because this pitch contains the most comedy beats outside of the three dedicated comedy pitches.   
+- Likewise, Studio Prestige (Drama) and Studio Dark (Horror) have many **overlapping priorities** (darker tone, strong themes, symbolism, world-building, etc.). It is **perfectly appropriate** that **Pitch: Horror_B_Western_Rock_Opera (a highly original experimental premise with a unique artistic vision)** scores highly with both **Studio Dark** (for horror mythos, originality, world-building, strong themes, budget, etc.) and **Studio Prestige** (for originality, world-building, strong themes, experimental storytelling, unique artistic vision, etc.).
+- Further, **Pitch: Horror_C_DarkFantasy_Adventure (a wide genre mashup of horror, adventure, action, fantasy, and comedy)** is the highest-scoring non-comedy pitch with **Studio Fun**. This is also **perfectly appropriate** because this pitch contains the most comedy beats outside of the three dedicated comedy pitches.   
 
 ---
 
@@ -108,7 +119,7 @@ Pitches are evaluated for **studio alignment**, not overall quality. No pitch is
 
 ---
 
-## Full Leaderboard - Qwen3:8b - 3 Mandates - 10 Pitches
+## Batch Run & Leaderboard Results - Qwen3:8b - 3 Mandates - 10 Pitches - Default Section Weights
 
 Processing this batch **(1 model x 3 mandate x 10 pitches x default section weights)** takes **~7 minutes** on **modest hardware (single RTX 4080 GPU/16 GB VRAM**). It produces **3 CSV files**, one for each **1 model x 1 mandate x 10 pitch** grouping, for comparative display. It also generates **30 separate JSON files** **(1 model x 1 mandate x 1 pitch)** of raw model scores and text justifications, pre-HITL weighting, for display and full transparency. 
 
