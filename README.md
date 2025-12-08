@@ -1,6 +1,8 @@
-# StudioSync HITL: Model-Agnostic LLM Studio Alignment Engine
+# StudioSync HITL: Model-Agnostic LLM Evaluation Engine
 
-A **multi-tier LLM system** for evaluating and scoring TV Series pitches vs. multiple studio reference docs with **model-agnostic prompt engineering, output parsing, error handling, dashboard display, batch processing, and human-in-the-loop integration**. Local models run in a **contained ecosystem** to protect **proprietary data**, **intellectual property**, and **business processes**.
+A **multi-tier LLM system** for evaluating and scoring input documents vs. reference docs with **model-agnostic prompt engineering, output parsing, error handling, dashboard display, batch processing, and human-in-the-loop integration**. Local models run in a **contained ecosystem** to protect **proprietary data**, **intellectual property**, and **business processes**.
+
+The use case featured below uses the system to evaluate pitches against studio mandates for granular, rubric-based scoring.
 
 ---
 
@@ -250,7 +252,7 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 | Frontend            | **Streamlit**                                                       |
 | Core Logic          | **Python 3.11**                                                    |
 | Model Orchestration | **Custom LLM_Interface Class**                                             |
-| Local Inference     | **Ollama, Transformers, OpenAI, Anthropic**                 					 |
+| Local Inference     | **Ollama, Transformers, OpenAI, Anthropic, PyTorch**                 					 |
 | Local Models        | **Qwen3, Gemma, DeepSeek, GPT-OSS**                  					 |
 | Cloud APIs          | **GPT-4+, Gemini 1.5, Claude 3.5** |
 | Data                | **Markdown**, **CSV**, **JSON**                             |
@@ -259,6 +261,10 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 ---
 
 ## Future Enhancements
+
+- The system works in all regards, but to properly benchmark LLMs and derive comparative performance metrics a baseline must be established. Each pitch and mandate pairing must have a *official* value, either determined by a human expert or *top tier* LLM evaluation. Before this stage, the pitches and mandates should be reviewed in detail to create *clear* perfect pitches that fully align with all rubric elements.
+- The system currently uses 10 quality pitches and tests for alignment. It would be informative to test models using imperfect pitches, or intentionally misleading pitches. For example, intentionally trying to mislead the LLM into scoring a misaligned pitch high by using **superlative stuffing**. I would expect to see divergence in model performance with this technique. Prompt engineering could address model susceptibility to this tactic.
+- The general roadmap for developing this use case beyond pitch evaluation, as a toold for writers and showrunners, is as follows:
 
 | **Stage**   | **Development Phase**                                          | **Focus & System Contribution**                                                                                                                                                                                                                                                                                                                |
 | ----------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
