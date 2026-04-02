@@ -32,7 +32,7 @@ A cost-efficient model (Qwen3:8b) is used to demonstrate how **smaller models ca
 
 ## Key Capabilities
 
-- **Model-Agnostic Orchestration:** Supports local (Qwen, Gemma, Llama, DeepSeek) and cloud (GPT, Gemini, Claude) LLMs  
+- **Model-Agnostic Orchestration:** Supports local (Qwen, Gemma, Llama, DeepSeek, GPT-OSS) and cloud (GPT, Gemini, Claude) LLMs  
 - **Structured Evaluation Framework:** Multi-criteria scoring with deterministic JSON outputs and model-generated rationales  
 - **Batch Processing Engine:** Full matrix execution across models, inputs, and scoring configurations  
 - **Human-in-the-Loop Control:** Adjustable scoring weights with transparent pre-aggregation outputs  
