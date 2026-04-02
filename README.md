@@ -260,7 +260,7 @@ Qwen3:8b demonstrates strong performance on this task, with consistent ranking b
 
 ### Specific Example
 
-Studio Prestige (Drama) and Studio Dark (Horror) have many **overlapping priorities** (darker tone, strong themes, symbolism, world-building). **Pitch: Horror_B_Western_Rock_Opera**, an experimental cross-genre premise with a unique artistic vision, appropriately scores highly with both: 
+Studio Prestige (Drama) and Studio Dark (Horror) have many **overlapping priorities** (darker tone, strong themes, symbolism, world-building). **Pitch: Horror_B_Western_Rock_Opera**, an experimental cross-genre premise with a unique artistic vision, appropriately scores highly with both. 
 
 - **Studio Dark** for overlapping priorities, horror mythos, budget, production timeline
 - **Studio Prestige** for overlapping priorities, experimental storytelling, unique artistic vision
@@ -289,7 +289,7 @@ This enables practical use in proposal screening, policy alignment, and decision
   - Accepted outputs are embedded into a shared vector database.  
   - Tenant-specific chat interfaces enable querying relevant content based on business context.  
 
-This extends StudioSync from an evaluation system into a **decision-support + knowledge retrieval platform**, supporting downstream workflows and persistent organizational memory. 
+This extends StudioSync from an evaluation system into a **decision-support and knowledge retrieval platform**, supporting downstream workflows and persistent organizational memory. 
 
 ---
 
