@@ -1,6 +1,6 @@
 # StudioSync: LLM Decision Support & Evaluation System
 
-> *This system reflects architectures and methodologies developed in professional engagements. Dataset and use case have been modified for public demonstration.*
+> *This system reflects architectures and methodologies developed in professional engagements. Dataset and use case have been modified for public demonstration. Live execution demo with reproducible results available upon request.*
 
 ## Executive Summary
 StudioSync is a **model-agnostic LLM system for structured evaluation and decision support**, designed to score, rank, and route document batches based on alignment with multi-criteria business priorities.  
@@ -63,7 +63,7 @@ Applicable to domains requiring structured evaluation and prioritization, includ
 
 ## Batch Run & Leaderboard Results - Qwen3:8b - 3 Mandates - 10 Pitches - Default Section Weights
 
-Processing this batch **(1 model x 3 mandate x 10 pitches x default section weights)** takes **~7 minutes** on **modest hardware (single RTX 4080 GPU/16 GB VRAM**). It produces **3 CSV files**, one for each **1 model x 1 mandate x 10 pitch** grouping, for comparative display. It also generates **30 separate JSON files** **(1 model x 1 mandate x 1 pitch)** of raw model scores and text justifications, pre-HITL weighting, for display and full transparency. 
+Processing this batch **(1 model x 3 mandate x 10 pitches x default section weights)** takes **~7 minutes** on **modest hardware (single RTX 4080 GPU/16 GB VRAM**). It produces **3 CSV files**, one for each **1 model x 1 mandate x 10 pitch x section weights** grouping, for leaderboard display. It also generates **30 separate JSON files** **(1 model x 1 mandate x 1 pitch)** of raw model scores and text justifications, pre-HITL weighting, for display and full transparency. 
 
 ---
 
@@ -102,7 +102,7 @@ Clear display of pitch rankings for every model x mandate pairing with HITL sect
 
 ## Raw Model Output with Scoring Justification
 
-Raw model output is parsed into JSON and saved before applying HITL weights. These files can be retrieved for easy human-readable display within the dashboard. The default token limit for a model's raw scoring and text justifications is 512 tokens, but this can be adjusted. A smaller token limit can speed up batch processing considerably if the user does not need the section-by-section text justifications. A larger token limit can offer more context for the model's decisions, and allow the model to fully expound on how the pitch aligns or misaligns with each section of the studio mandate.
+Raw model output is parsed into JSON and saved before applying HITL weights. These files can be retrieved for easy human-readable display within the dashboard. The default token limit for a model's raw scoring and text justifications is 512 tokens, but this can be adjusted. A smaller token limit can speed up batch processing considerably if the user does not need the section-by-section text justifications. A larger token limit can offer more context for the model's decisions.
 
 ---
 
