@@ -1,12 +1,15 @@
-# StudioSync HITL: Model-Agnostic LLM Evaluation Engine
+# StudioSync: LLM Decision Support & Evaluation System
 
-A **multi-tier LLM system** for evaluating and scoring input documents vs. reference docs with **model-agnostic prompt engineering, output parsing, error handling, dashboard display, batch processing, and human-in-the-loop integration**. Local models run in a **contained ecosystem** to protect **proprietary data**, **intellectual property**, and **business processes**.
+## Executive Summary
+StudioSync is a **model-agnostic, multi-rubric LLM system** designed to evaluate custom batches of input documents (pitches) vs. policy documents (mandates), providing multi-criteria scores reflecting alignment with business priority rubrics. The system automates screening, ranking, and routing proposal batches to end users where business needs align. Due to the model-agnostic architecture, StudioSync also functions as an automated utility for deriving metrics from various A/B tests. 
 
-The use case featured below uses the system to evaluate pitches against studio mandates for granular, rubric-based scoring.
+StudioSync has been tested with a variety of local (Qwen, GPT, Gemma, Deepseek, Llama) and cloud (GPT, Gemini, Claude) models. Model Qwen3:8b will be used throughout this demo for cohesion and to show how well smaller, cost-effective models can perform on complex but discrete tasks with appropriate scaffolding. Qwen3:8b is known to perform well within this system as it was the primary model used for development and testing to reduce costs.
+
+A sanitized dataset and use case are provided for demo. The dataset is small (10 TV show pitches and 3 Studio mandates) but complex, feature-rich, and designed to provide a suitable demonstration. 
 
 ---
 
-## Batch Options - 10 Model x 10 Pitch x 3 Studio Mandate x 8 Adjustable Section Weights
+## Custom Batch UI - 10 Model x 10 Pitch x 3 Studio Mandate x 8 Adjustable Section Weights
 
 ![Batch Builder](output/batch_builder.png)
 
@@ -14,13 +17,15 @@ The use case featured below uses the system to evaluate pitches against studio m
 
 ---
 
-## Executive Summary
+## System Overview
 
-**StudioSync** is a model-agnostic, multi-rubric evaluation system designed to evaluate TV show pitches against specific studio mandates. The system provides granular scoring of genre, tone, target audience, and production requirements informed by reference documents. Appropriate for automating "first reads" or routing pitches to specific studios where business needs align. 
-
-This demo showcases the system evaluating a batch of 10 pitches across 3 distinct mandates with a local instance of Qwen3:8b. This run highlights the system's raw structured scoring output and the final leaderboard after applying human-adjustable section weights. Local inference, as displayed in this run, provides a contained, secure system for legal, data, and IP protection. This system can also provide inference using more powerful, but less secure, cloud-based models like GPT, Gemini, and Claude.
-
-**Conclusion:** Even a smaller, secure, local model like **Qwen3:8b** can achieve **exceptional performance** on highly complex tasks **(combining objective quantitative metrics, subjective qualitative metrics, dense rubric evaluation)** with appropriate **prompt engineering, document formatting, error handling, RAG, parsing, and system engineering**.  
+- **Model-Agnostism:** Local (Qwen3, GPT, Gemma, Deepseek, Llama) and cloud-based (GPT, Gemini, Claude) LLMs supported.
+- **Leaderboard Population:** Ingestion -> Custom Batch -> Batch Inference -> Model Output -> JSON Parsing -> Weight Application -> CSV Parsing -> Final Leaderboard Display.
+- **Model Output Parsing:** The system enforces a JSON schema for model output with error handling and resend/retry logic. 
+- **Auditing:** Raw model output is saved prior to weight application to preserve output at time of inference and can be viewed in UI.
+- **Tracing:** A Run Manager wraps the entire process, embedding run metadata into all documents and model outputs for deriving metrics and reproducibility.
+- **Streamlit Interface:** Enables ingestion, running custom batches, section weight adjustments, leaderboard display, and viewing raw model output with metadata.
+- **Test Support:** The system's flexibility, structure, auditing, and tracing support deriving metrics from A/B Testing: Counterfactual, Superlative Stuffing, Doc Format/Version, Model Config, Prompt, etc.
 
 ---
 
@@ -39,42 +44,15 @@ Highly Generalizable to other sectors where **priority alignment** or **resource
 
 ---
 
-## System Overview
+## Use Case: Document Design
 
-- **Multi-model inference:** Run evaluations using **10+ local (Qwen3, GPT-OSS, Gemma, DeepSeek) and cloud-based LLMs (GPT-4+, Gemini, Claude)**.
-- **Structured rubric scoring:** Each pitch is evaluated on 8 distinct categories, scored from 1–10 with a text justification, raw model output is JSON/CSV parsed, and a final score is achieved after apply human-adjustable section weights.
-- **Mandate–pitch alignment:** Evaluate pitch alignment using varied studio mandates (low-budget comedy, mid-budget horror, high-budget drama) with granular requirements in tone, target audience, runtime, casting, production timeline, themes, content sensitivity, and more.
-- **Weighted score aggregation:** Allow flexible weight adjustments to prioritize certain categories over others with easy adjustment sliders.
-- **Batch processing + leaderboard output:** Efficiently process multiple pitches in batches and rank them according to their alignment with multiple mandates for comparison.
-- **Streamlit HITL interface:** Enable building batches (select models, pitches, mandates), human-in-the-loop (HITL) section weight adjustments, and display for transparent raw model output vs. final aggregate leaderboard scoring.
-- **Full Workflow**: Inputs (model + pitches + mandates + section weights) -> Batch Inference -> Model Output -> JSON Parsing -> Weight Application -> CSV Parsing -> Ranking -> Final Leaderboard Display.
+The pitch set consists of **10 high-quality TV show pitches**, carefully designed to isolate alignment with specific mandates rather than overall quality. 
 
----
-
-## Results
-
-Performance for Qwen3:8 **far exceeds expectations**. This exceptional performance, for a relatively small model, is likely due to robust **prompt engineering, error handling, document formatting, RAG, parsing, and system engineering**. 
-
-Qwen3:8 was expected to be the system's **bottom tier performance baseline** compared to cloud-based models 100 times its size, like GPT. To see more divergence in performance, a ~4b local model (Qwen, Mistral, Gemma, Llama) will need to be tested as a new **bottom tier performance baseline**.
-
-- A, B, and C pitches are appropriately ranked relative to each studio's priorities. **Nothing is out of order.**
-- **Pitch: Control_F_Sport_Academia** is appropriately ranked very low for all three studios.
-- Text justifications provide excellent context and **reference relevant studio mandate sections specifically**.
-- **Objective quantitative metrics** (Budget, Production Timeline, Episode Count, Episode Length, Primary Cast Size, etc.) are **referenced and judged accurately**, with one minor exception out of 30 inferences. This could potentially be remedied by revisiting prompt engineering or doc structure.
-- **Subjective qualitative metrics** (Sub-Genre, Cross-Genre, Tone, Style Influences, Premise, Themes, etc.) are **referenced and judged accurately**, though not penalized harshly enough in some cases. This could potentially be remedied by revisiting prompt engineering or doc structure.
-- Even more interesting, the evaluation of misaligned genre pitches (Comedy Pitch vs Horror Studio Mandate, et al.) is **nuanced and accurate**. Studio Prestige (Drama) and Studio Dark (Horror) have no interest in formulaic comedy pitches, even if well-constructed. **Scoring here is highly appropriate**.
-- Likewise, Studio Prestige (Drama) and Studio Dark (Horror) have many **overlapping priorities** (darker tone, strong themes, symbolism, world-building, etc.). It is **perfectly appropriate** that **Pitch: Horror_B_Western_Rock_Opera (a highly original experimental premise with a unique artistic vision)** scores highly with both **Studio Dark** (for horror mythos, originality, world-building, strong themes, budget, etc.) and **Studio Prestige** (for originality, world-building, strong themes, experimental storytelling, unique artistic vision, etc.).
-- Further, **Pitch: Horror_C_DarkFantasy_Adventure (a wide genre mashup of horror, adventure, action, fantasy, and comedy)** is the highest-scoring non-comedy pitch with **Studio Fun**. This is also **perfectly appropriate** because this pitch contains the most comedy beats outside of the three dedicated comedy pitches.   
-
----
-
-## Document Design
-
-The pitch set consists of **10 high-quality pitches**, carefully designed to isolate alignment with specific mandates rather than overall quality. 
-
-No pitch is "bad", but each is designed to adhere to a **specific genre/sub-genre**. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates **one perfect fit per studio** (A-Tier), **two curve balls per studio** that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** (Control_F) that **strongly misaligns with all studio business needs**. 
+No pitch is "bad", but each is designed to adhere to a **specific genre/sub-genre**. Each is well-defined and many are experimental, odd genre mashups, or niche. This creates **one perfect/near-perfect fit per studio** (A-Tier), **two curve balls per studio** that intentionally violate key studio priorities (B-Tier and C-Tier), and one **universal control pitch** (Control_F) that **strongly misaligns with the business needs of all 3 studios**. 
 
 Each pitch is evaluated across **3 distinct studio mandates** with **highly divergent priorities** and **deviation tolerances**.
+
+---
 
 <details>
 <summary>
@@ -114,6 +92,36 @@ Each pitch is evaluated across **3 distinct studio mandates** with **highly dive
 | Horror_C   | Dark Fantasy Adventure | Carter vs. the Black Plague  | Carter and his band of righteous outlaws defy the odds, and the law, to distribute a cure across a medieval world plagued by monsters and corruption. **Robin Hood** meets **Ash vs. Evil Dead** with a road-trip vibe. |
 
 </details>
+
+---
+
+## Generalizability
+
+Highly Generalizable to other sectors where **priority alignment** or **resource allocation** is key, including:
+
+- **Legal Documents**
+- **Healthcare Operations**
+- **Marketing Campaigns**
+- **Business Proposals** 
+- **Brand Communication Guidelines**
+- **Organization Policies**
+- **Manufacturing Processes**
+- **Team-building & Skills Coverage**
+
+---
+
+## Use Case: Results
+
+Qwen3:8 performs admirably on this task. Scoring changes slightly across runs, but Qwen3:8b reliably ranks all pitches in order according to their respective genre studio across 10 runs.
+
+- A, B, and C pitches are appropriately ranked relative to each studio's priorities. 
+- **Pitch: Control_F_Sport_Academia** is appropriately ranked very low for all three studios.
+- Text justifications provide excellent context and **references relevant studio mandate sections specifically**.
+- **Objective quantitative metrics** (Budget, Production Timeline, Episode Count, Episode Length, Primary Cast Size, etc.) are **referenced and judged accurately**, with **one minor exception** out of 30 inferences. This could potentially be remedied by revisiting prompt engineering or doc structure.
+- **Subjective qualitative metrics** (Sub-Genre, Cross-Genre, Tone, Style Influences, Premise, Themes, etc.) are **referenced and judged accurately**, though not penalized harshly enough in some cases. This could potentially be remedied by revisiting prompt engineering or doc structure.
+- Even more interesting, the evaluation of misaligned genre pitches (Comedy Pitch vs Horror Studio Mandate, et al.) is **nuanced and accurate**. Studio Prestige (Drama) and Studio Dark (Horror) have no interest in formulaic comedy pitches, even if well-constructed. **Scoring here is highly appropriate**.
+- Likewise, Studio Prestige (Drama) and Studio Dark (Horror) have many **overlapping priorities** (darker tone, strong themes, symbolism, world-building, etc.). It is **perfectly appropriate** that **Pitch: Horror_B_Western_Rock_Opera (an experimental premise with a unique artistic vision)** scores highly with both **Studio Dark** (for horror mythos, originality, world-building, strong themes, budget, etc.) and **Studio Prestige** (for originality, world-building, strong themes, experimental storytelling, unique artistic vision, etc.).
+- Further, **Pitch: Horror_C_DarkFantasy_Adventure (a wide genre mashup of horror, adventure, action, fantasy, and comedy)** is the highest-scoring non-comedy pitch with **Studio Fun**. This is also **perfectly appropriate** because this pitch contains the most comedy beats outside of the three dedicated comedy pitches.   
 
 ---
 
@@ -245,34 +253,12 @@ Raw model output is parsed into JSON and saved before applying HITL weights. The
 
 ---
 
-## Tech Stack
-
-| Component           | Technology                                                          |
-| ------------------- | ------------------------------------------------------------------- |
-| Frontend            | **Streamlit**                                                       |
-| Core Logic          | **Python 3.11**                                                    |
-| Model Orchestration | **Custom LLM_Interface Class**                                             |
-| Local Inference     | **Ollama, Transformers, OpenAI, Anthropic, PyTorch**                 					 |
-| Local Models        | **Qwen3, Gemma, DeepSeek, GPT-OSS**                  					 |
-| Cloud APIs          | **GPT-4+, Gemini 1.5, Claude 3.5** |
-| Data                | **Markdown**, **CSV**, **JSON**                             |
-| Hardware            | **RTX 4080 GPU, 7900X 12-Core CPU, 32 GB RAM**                             |
-
----
-
 ## Future Enhancements
 
-- The system works in all regards, but to properly benchmark LLMs and derive comparative performance metrics a baseline must be established. Each pitch and mandate pairing must have a *official* value, either determined by a human expert or *top tier* LLM evaluation. Before this stage, the pitches and mandates should be reviewed in detail to create *clear* perfect pitches that fully align with all rubric elements.
-- The system currently uses 10 quality pitches and tests for alignment. It would be informative to test models using imperfect pitches, or intentionally misleading pitches. For example, intentionally trying to mislead the LLM into scoring a misaligned pitch high by using **superlative stuffing**. I would expect to see divergence in model performance with this technique. Prompt engineering could address model susceptibility to this tactic.
-- The general roadmap for developing this use case beyond pitch evaluation, as a toold for writers and showrunners, is as follows:
-
-| **Stage**   | **Development Phase**                                          | **Focus & System Contribution**                                                                                                                                                                                                                                                                                                                |
-| ----------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Stage 1** | **Early Development – Ideation & Pitching (Complete)**                    | The system evaluates pitches for alignment with studio priorities. It flags mismatches in tone, premise, audience targeting, and provides an appropriate score. <br><br>**System Value:** Studio alignment, submission readiness, tone/genre/audience cohesion.                                           |
-| **Stage 2** | **Mid Development – Writers’ Room & Series Design**            | Writers expand on the concept with character bibles, episode plans, and episode outlines. The system ensures internal consistency, character motivation, world rules, and structure. <br><br>**System Value:** Cross-doc consistency, dynamic role tracking, pilot structure analysis, creative rule enforcement.                              |
-| **Stage 3** | **Late Development – Drafts & Season-Level Cohesion**          | With a full season arc emerging, the system checks for arc progression, setup/payoff resolution, tonal drift, and emerging redundancies. Initial drafts are stress-tested for alignment and depth. <br><br>**System Value:** Season-level evaluation, redundancy detection, thematic cohesion, relationship development.                           |
-| **Stage 4** | **Finalization – Table Reads & Locked Scripts**                | StudioSync helps track changes during finalization. As late-stage rewrites, table read feedback, and scene swaps occur, the system checks for unintended narrative damage (e.g., dropped setups or tonal mismatches). <br><br>**System Value:** Regression detection, script polishing support, dialogue-level feedback, micro-iteration. |
-| **Stage 5** | **Season 2 & Beyond – Narrative Continuity & Future Planning** | StudioSync surfaces unresolved threads, long-term growth potential, and timeline conflicts to support new season planning. Past materials act as high-fidelity memory to inform future drafts. <br><br>**System Value:** Continuity recall, multi-season arc tracking, future-proofing, opportunity discovery. 
+- To better support automated benchmarking and derive comparative performance metrics, the Run Manager's metadata embedding should be revisited to add relevant info.
+- A system for tracking groups of looped runs should be established for tracking variation over multiple run iterations. Run queues would also be a useful addition.
+- The system currently supports A/B testing, but adding an additional interface to display this in UI would be beneficial, like the JSON viewer, instead of extracting values embedded in files.
+- A RAG system is under development downstream of evaluation. This would support routing pitches to appropriate studios. If a scoring threshold is achieved relative to a studio, the pitch passes through a quality gate and becomes part of a multi-tenant vector DB. Afterwards, each studio's chatbot can answer queries about pitches relevant to their business needs.   
 
 ---
 
@@ -283,4 +269,16 @@ Available for live walkthroughs, Q&A, and technical deep dives on this project.
 **Jeffrey Robert Lynch** [LinkedIn](https://www.linkedin.com/in/jeffrey-lynch-350930348)
 
 (Demo access, source code discussions, and use-case exploration available upon request.)
+
+---
+
+## License
+
+© 2025 Jeffrey Robert Lynch
+
+This project, including all source code, documentation, and related materials, is provided strictly for personal, educational, and portfolio review purposes.
+
+No part of this codebase may be copied, modified, distributed, published, or used for commercial purposes without the author's explicit written permission.
+
+All rights are reserved by the author. No licenses or permissions are granted beyond personal, non-commercial viewing.
 
